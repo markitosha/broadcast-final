@@ -1,0 +1,12 @@
+.VoteContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .VoteContainer {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}

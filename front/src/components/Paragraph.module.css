@@ -1,0 +1,22 @@
+.Paragraph {
+    font-size: 14px;
+    line-height: 165%;
+    color: white;
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.Justify {
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .Paragraph {
+        font-size: 20px;
+        line-height: 165%;
+    }
+
+    .Last {
+        margin-bottom: 60px;
+    }
+}

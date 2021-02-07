@@ -1,0 +1,75 @@
+.Block {
+    font-size: 20px;
+    line-height: 120%;
+    width: fit-content;
+    margin-bottom: 24px;
+    font-family: 'Arkhip', sans-serif;
+}
+
+.Time {
+    color: white;
+    display: inline;
+}
+
+.GMT {
+    color: white;
+    opacity: 0.65;
+    text-align: right;
+    font-size: 18px;
+}
+
+.Rose {
+    font-family: Rose, sans-serif;
+    background: linear-gradient(90deg, #C19A54 0%, #E8D46C 27.08%, #E7DFB9 51.04%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    line-height: 120%;
+    display: inline;
+}
+
+.RoseGMT {
+    opacity: 1;
+    display: inline;
+    vertical-align: bottom;
+    line-height: 30px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.BlockRose {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .Block {
+        display: flex;
+        font-size: 32px;
+    }
+
+    .GMT {
+        font-size: 24px;
+        margin-left: 32px;
+    }
+
+    .Rose {
+        font-family: Rose, sans-serif;
+        background: linear-gradient(90deg, #C19A54 0%, #E8D46C 27.08%, #E7DFB9 51.04%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 60px;
+        line-height: 120%;
+        display: inline;
+    }
+
+    .RoseGMT {
+        opacity: 1;
+        display: inline;
+        vertical-align: bottom;
+        line-height: 80px;
+    }
+
+    .BlockRose {
+        display: block;
+    }
+}

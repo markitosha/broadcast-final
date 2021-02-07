@@ -1,0 +1,107 @@
+version: '3.5'
+services:
+  nginx:
+    restart: unless-stopped
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8443:8443"
+      - "8000:8000"
+    volumes:
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./back/app/static:/var/www/broadcast/static
+      - ./nginx/letsencrypt:/etc/letsencrypt
+    networks:
+      - traefik
+      - broadcast
+    depends_on:
+      - backend
+      - frontend
+
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./front/Dockerfile
+    restart: unless-stopped
+    image: broadcast_frontend
+    environment:
+#      - REACT_APP_API=https://broadcast.rakhmatull.in:8443
+      - REACT_APP_API=https://bcs-nutcracker.ru:8443
+#      - REACT_APP_SOCKET=wss://broadcast.rakhmatull.in:8443
+      - REACT_APP_SOCKET=wss://bcs-nutcracker.ru:8443
+    command: serve /code/build -s -l 8888
+    ports:
+      - "8888:8888"
+    networks:
+      - traefik
+      - broadcast
+
+  migration:
+    build: .
+    image: broadcast_django
+    env_file:
+      - .env
+    command: python manage.py migrate --noinput
+    volumes:
+      - ./back:/code
+    networks:
+      - broadcast
+
+  backend:
+    image: broadcast_django
+    env_file:
+      - .env
+    environment:
+      - CELERY_BROKER_URL=amqp://broadcast:broadcast@rabbit:5672
+    command: python manage.py runserver 0.0.0.0:5000
+    volumes:
+      - ./back:/code
+      - ./front/build:/var/www/broadcast/static
+    ports:
+      - "5000:5000"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 100000
+        hard: 100000
+    depends_on:
+      - migration
+    networks:
+      - traefik
+      - broadcast
+
+  rabbit:
+    restart: unless-stopped
+    image: rabbitmq:latest
+    hostname: rabbit
+    command: rabbitmq-server
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - broadcast
+
+  celery:
+    image: broadcast_django
+    command: celery -A broadcast worker --loglevel=debug
+    env_file:
+      - .env
+    environment:
+      - CELERY_BROKER_URL=amqp://broadcast:broadcast@rabbit:5672
+      - SOCKET_PROXY_URL=http://backend:5000/
+    depends_on:
+      - rabbit
+      - migration
+      - backend
+    volumes:
+      - ./back:/code
+    networks:
+      - broadcast
+
+networks:
+  traefik:
+    external: true
+  broadcast:
+    external: false

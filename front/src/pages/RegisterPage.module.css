@@ -1,0 +1,85 @@
+.Text {
+    font-family: 'Arkhip', sans-serif;
+    font-size: 20px;
+    line-height: 120%;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.AddText {
+    font-size: 14px;
+    line-height: 165%;
+    color: #FFFFFF;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.Label {
+    font-size: 14px;
+    line-height: 180%;
+    color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Checkbox {
+    margin: 0;
+    border: 1px solid #CDD9E9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.Error {
+    /*outline: 1px solid #E62E4D;*/
+    box-shadow: 0 0 1pt 1pt #E62E4D;
+    background: #FCEAED;
+}
+
+.Row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-direction: column;
+}
+
+.Centered {
+    display: flex;
+}
+
+.Link {
+    color: #D09D38;
+    cursor: pointer;
+}
+
+.Link:hover {
+    color: #BF9034;
+}
+
+.ErrorLabel {
+    color: #E62E4D;
+}
+
+@media (min-width: 768px) {
+    .Text {
+        font-size: 36px;
+    }
+
+    .Row {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .Centered {
+        display: flex;
+        align-items: center;
+        height: calc(100vh - 53px - 46px);
+    }
+}

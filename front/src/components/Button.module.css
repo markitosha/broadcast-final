@@ -1,0 +1,46 @@
+.Button {
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    font-family: 'Arkhip', sans-serif;
+    min-height: 60px;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.Wide {
+    width: 100%;
+}
+
+.Gold {
+    background: linear-gradient(90deg, rgba(125, 94, 34, 0.4) 0%, rgba(208, 157, 56, 0.4) 50%), linear-gradient(90deg, rgba(208, 157, 56, 0.4) 50%, rgba(125, 94, 34, 0.4) 100%), #D09D38;
+    border: 1px solid #006DF0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.Blue {
+    background: linear-gradient(90deg, rgba(0, 16, 76, 0.4) 0%, rgba(0, 109, 240, 0.4) 50%), linear-gradient(90deg, rgba(0, 109, 240, 0.4) 50%, rgba(0, 16, 76, 0.4) 100%), #006DF0;
+    border: 1px solid #006DF0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.Blue:hover {
+    background: linear-gradient(90deg, rgba(125, 94, 34, 0.4) 0%, rgba(208, 157, 56, 0.4) 50%), linear-gradient(90deg, rgba(208, 157, 56, 0.4) 50%, rgba(125, 94, 34, 0.4) 100%), #D09D38;
+    border: 2px solid #D09D38;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .Button {
+        min-height: 60px;
+        font-size: 20px;
+        line-height: 120%;
+        height: fit-content;
+    }
+}

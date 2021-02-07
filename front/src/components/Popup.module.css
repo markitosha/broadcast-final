@@ -1,0 +1,41 @@
+.FixedLayout {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background: #001630;
+    border: 1px solid #D09D38;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 100;
+    padding: 40px 20px 100px 20px;
+    height: 100%;
+    overflow: auto;
+}
+
+.Close {
+    background-image: url("../img/close.svg");
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+@media (min-width: 980px) {
+    .FixedLayout {
+        width: 980px;
+        left: auto;
+        right: 0;
+        padding: 80px 40px;
+    }
+
+    .Close {
+        right: 40px;
+        top: 40px;
+    }
+}

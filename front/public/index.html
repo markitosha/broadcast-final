@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta
+            name="description"
+            content="Новое прочтение старых традиций в форме иммерсивного балета, где цифровое искусство и классика объединились в непредсказуемое представление."
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png"/>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>БКС "Щелкунчик"</title>
+    <style>
+    #root.hidden {
+        display: none;
+    }
+        #old {
+        display: none
+    }
+
+    #old.shown {
+        display: block
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+        font-family: 'Arkhip', sans-serif;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-left: 440px;
+    }
+
+    .text {
+        font-size: 20px;
+        line-height: 165%;
+        color: #FFFFFF;
+        font-family: 'Suisse', sans-serif;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-left: 440px;
+        margin-top: 135px;
+    }
+
+    .bcsLogo {
+        background: no-repeat url("%PUBLIC_URL%/logoMobile.svg");
+        width: 246px;
+        height: 40px;
+        margin: 20px 40px;
+        margin-top: -60px;
+    }
+    .shLogo {
+        background: no-repeat url("%PUBLIC_URL%/logoSh.png");
+        width: 248px;
+        height: 80px;
+        margin: auto;
+        background-size: cover;
+        margin-top: 10px;
+    }
+    .retro {
+        background: no-repeat url("%PUBLIC_URL%/retro.png");
+        width: 430px;
+        height: 338px;
+        background-size: cover;
+        display: block;
+    }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            display: block;
+        }
+
+    @media (max-width:768px) {
+        .retro {
+            display: none;
+        }
+        .center {
+            width: 90%;
+        }
+        .title {
+            position: static;
+            margin-left: 0;
+        }
+
+        .text {
+            position: static;
+            margin-left: 0px;
+            margin-top: 24px;
+        }
+
+    }
+    </style>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<div id="old">
+    <div class="shLogo"></div>
+    <div class="bcsLogo"></div>
+    <div class="center">
+        <div class="retro"></div>
+        <div class="title">Вы используете устаревший браузер</div>
+        <div class="text">Для того, чтобы использовать все возможности сайта, откройте сайт в&nbsp;любом
+            современном браузере: Google Chrome, Opera, Mozilla Firefox, Safari.
+            Убедитесь, что браузер в&nbsp;последней версии.
+        </div>
+    </div>
+</div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+<script>
+    (function () {
+        function load() {
+            if (document.getElementById('root').innerHTML === '') {
+                document.getElementById('old').className = 'shown';
+                document.getElementById('root').className = 'hidden';
+            }
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener('load', load);
+        } else if (window.attachEvent)  {
+            window.attachEvent('onload', load);
+        }
+
+        window.onload = function(){
+            if (document.getElementById('root').innerHTML === '') {
+                document.getElementById('old').className = 'shown';
+                document.getElementById('root').className = 'hidden';
+            }
+        };
+    })()
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(71726152, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/71726152" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,130 @@
+.Container {
+    width: 100%;
+    margin: auto;
+}
+
+.RelativeContainer {
+    position: relative;
+    display: flex;
+}
+
+.Dots {
+    background: url('../img/dot.png');
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: -42px;
+    top: -20px;
+    background-size: cover;
+}
+
+.Revert {
+    transform: rotate(180deg);
+    left: auto;
+    top: auto;
+    right: -42px;
+    bottom: -20px;
+}
+
+.Line {
+    display: block;
+    height: 1px;
+    background: #D09D38;
+    width: 100%;
+}
+
+.Text {
+    font-size: 12px;
+    line-height: 165%;
+    margin: 20px 0;
+    color: white;
+}
+
+.TextRight {
+    text-align: right;
+}
+
+.Quote {
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin: 40px 0;
+}
+
+.Link {
+    color: #D09D38;
+    cursor: pointer;
+}
+
+.Link:hover {
+    color: #BF9034;
+}
+
+@media (min-width: 768px) {
+    .Container {
+        width: 70%;
+        margin: auto;
+        max-width: 900px;
+    }
+
+    .Dots {
+        height: 60px;
+        width: 60px;
+        left: -84px;
+        top: -40px;
+    }
+
+    .Revert {
+        right: -84px;
+        bottom: -40px;
+    }
+
+    .Text {
+        font-size: 14px;
+        line-height: 165%;
+        margin: 20px 0;
+        color: white;
+    }
+
+    @keyframes animate {
+        0%   {left: 40%;}
+        100% {left: 20%;}
+    }
+
+    @keyframes animateLeft {
+        0%   {left: 0;}
+        100% {left: 80px;}
+    }
+
+    .Quote {
+        width: 70%;
+        position: relative;
+        left: 20%;
+        margin: 40px 0 80px 0;
+        animation: animate 3s;
+    }
+
+    .LeftQuote {
+        left: 80px;
+        width: 75%;
+        animation: animateLeft 3s;
+    }
+
+    .Sh {
+        background: no-repeat url('../img/sh.svg');
+        background-size: contain;
+        height: 572px;
+        width: 303px;
+        /*transform: rotate(-3deg);*/
+        position: absolute;
+        right: -22%;
+        top: -40px;
+        /*left: -240px;*/
+    }
+
+    .ShText {
+        width: 90%;
+        position: relative;
+        margin-bottom: 60px;
+    }
+}

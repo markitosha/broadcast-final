@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "broadcast"
+version = "0.1.0"
+description = ""
+authors = ["Robert Rakhmatullin <robertbg4@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django-phonenumber-field = "^5.0.0"
+Django = "^3.1.5"
+phonenumbers = "^8.12.16"
+djangorestframework = "^3.12.2"
+requests = "^2.25.1"
+python-socketio = "^5.0.4"
+uvicorn = "^0.13.3"
+pip = "^21.0"
+django-cors-headers = "^3.6.0"
+celery = "^5.0.5"
+redis = "^3.5.3"
+oitnb = "^0.2.2"
+django-environ = "^0.4.5"
+psycopg2-binary = "^2.8.6"
+django-anymail = "^8.1"
+postmarker = "^0.17.0"
+ipython = "^7.20.0"
+kombu = "^5.0.2"
+
+[tool.poetry.dev-dependencies]
+ipython = "^7.20.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

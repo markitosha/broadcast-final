@@ -1,0 +1,288 @@
+.Controller {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.Container {
+    align-items: center;
+    display: flex;
+}
+
+.Wait {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.Text {
+    font-family: 'Arkhip', sans-serif;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 120%;
+    margin: auto;
+    text-align: center;
+}
+
+.Question {
+    font-family: 'Arkhip', sans-serif;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 120%;
+    margin: auto;
+    text-align: center;
+}
+
+.Vote {
+    background: linear-gradient(90deg, rgba(0, 16, 76, 0.1) 0%, rgba(0, 109, 240, 0.1) 50%), linear-gradient(90deg, rgba(0, 109, 240, 0.1) 50%, rgba(0, 16, 76, 0.1) 100%), rgba(0, 109, 240, 0.2);
+    border: 1px solid #006DF0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Arkhip', sans-serif;
+    font-size: 18px;
+    line-height: 120%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+
+.Vote.Selected {
+    padding-top: 40px
+}
+
+.ShowStats {
+    justify-content: space-between;
+}
+
+.Hoverable:hover, .Selected {
+    background: linear-gradient(90deg, rgba(0, 16, 76, 0.4) 0%, rgba(0, 109, 240, 0.4) 50%), linear-gradient(90deg, rgba(0, 109, 240, 0.4) 50%, rgba(0, 16, 76, 0.4) 100%), #006DF0;
+}
+
+.Loser {
+    background: transparent;
+}
+
+.Timer {
+    background: linear-gradient(90deg, rgba(125, 94, 34, 0.4) 0%, rgba(208, 157, 56, 0.4) 50%), linear-gradient(90deg, rgba(208, 157, 56, 0.4) 50%, rgba(125, 94, 34, 0.4) 100%), #D09D38;
+    border: 1px solid #D09D38;
+    box-sizing: border-box;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 60px;
+    color: white;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 9px 15px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 12px
+}
+
+.Chosen {
+    display: none;
+}
+
+.Selected .Chosen {
+    display: block;
+    position: absolute;
+    top: 0;
+    background: #FFFFFF;
+    border-radius: 0 0 8px 8px;
+    width: fit-content;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: black;
+    padding: 6px 12px;
+}
+
+.Winner {
+    background: linear-gradient(90deg, rgba(125, 94, 34, 0.4) 0%, rgba(208, 157, 56, 0.4) 50%), linear-gradient(90deg, rgba(208, 157, 56, 0.4) 50%, rgba(125, 94, 34, 0.4) 100%), #D09D38;
+    border: 2px solid #D09D38;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.InnerBorder {
+    display: none;
+}
+
+.Stats {
+    display: none;
+}
+
+.ShowStats .Stats {
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+    height: 4px;
+    margin-top: 34px;
+}
+
+.CurrentStat {
+    background: #006DF0;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+}
+
+.Selected .CurrentStat, .Winner .CurrentStat {
+    background: #FFFFFF;
+}
+
+.Selected.Loser .CurrentStat {
+    background: #006DF0;
+}
+
+.TextStat {
+    font-family: 'Arkhip', sans-serif;
+    font-size: 12px;
+    line-height: 120%;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 10px;
+}
+
+.VoteContainer {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .Variants {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Vote {
+        width: 48%;
+        font-size: 24px;
+        padding: 80px 40px;
+    }
+
+    .Question {
+        font-size: 36px;
+    }
+
+    .Wait {
+        font-size: 24px;
+        background: rgba(0, 22, 48, 0.6);
+        border: 1px solid #D09D38;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 80px 20px;
+        margin-top: 40px;
+    }
+
+    .TextStat {
+        font-size: 20px;
+    }
+
+    .ShowStats .Stats {
+        height: 8px;
+    }
+
+    .Vote.ShowStats {
+        padding: 60px 40px;
+    }
+
+    .Winner .InnerBorder {
+        display: block;
+        opacity: 0.4;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 2px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        position: absolute;
+        top: 10px;
+    }
+
+    .Timer {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .Variants {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Wait {
+        width: 25vw;
+        display: flex;
+        align-self: stretch;
+        margin-top: 0;
+    }
+
+    .Vote {
+        width: 100%;
+        font-size: 18px;
+        padding: 40px;
+    }
+
+    .Vote.ShowStats {
+        padding: 40px 20px;
+    }
+
+    .VoteContainer {
+        width: 25vw;
+    }
+
+    .Question {
+        font-size: 20px;
+    }
+
+    .Timer {
+        margin-top: 0;
+        font-size: 12px;
+    }
+
+    .TextStat {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .Vote {
+        width: 100%;
+        font-size: 24px;
+        padding: 80px 40px;
+    }
+
+    .Vote.ShowStats {
+        padding: 60px 40px;
+    }
+
+    .VoteContainer {
+        width: 20vw;
+    }
+
+    .Question {
+        font-size: 30px;
+    }
+
+    .Timer {
+        font-size: 12px;
+        padding: 12px 20px;
+    }
+
+    .TextStat {
+        font-size: 16px;
+    }
+}

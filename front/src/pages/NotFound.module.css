@@ -1,0 +1,70 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Shel {
+    background-image: url("../img/NotFounfSh.svg");
+    width: 239px;
+    height: 495px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.NF {
+    font-family: 'Arkhip', sans-serif;
+    font-size: 72px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.Title {
+    font-family: 'Arkhip', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 120%;
+    /* or 43px */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.04em;
+
+    /* Basic / White */
+
+    color: #FFFFFF;
+}
+
+.Text {
+    font-family: 'Suisse', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 165%;
+    /* or 33px */
+
+    display: flex;
+    align-items: center;
+
+    /* Basic / White */
+
+    color: #FFFFFF;
+    margin-top: 24px;
+}
+
+.Link {
+    color: #D09D38;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Link:hover {
+    color: #BF9034;
+}
+
+.Block {
+    width: 430px;
+    margin-left: 135px;
+}
